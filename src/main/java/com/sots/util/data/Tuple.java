@@ -1,56 +1,56 @@
 package com.sots.util.data;
 
 public class Tuple<K, V> {
-	
-	private K key;
-	
-	private V val;
-	
-	public Tuple(K Key, V Val){
-		key = Key;
-		val = Val;
-	}
 
-	public K getKey() {
-		return key;
-	}
+    private K key;
 
-	public V getVal() {
-		return val;
-	}
+    private V val;
 
-	public void setKey(K key) {
-		this.key = key;
-	}
+    public Tuple(K Key, V Val) {
+        key = Key;
+        val = Val;
+    }
 
-	public void setVal(V val) {
-		this.val = val;
-	}
+    public K getKey() {
+        return key;
+    }
 
-	public boolean equals(Object o) {
-		if (o == null) {
-			return false;
-		}
+    public void setKey(K key) {
+        this.key = key;
+    }
 
-		if (!(o instanceof Tuple<?, ?>)) {
-			return false;
-		}
-		Tuple<?, ?> other = (Tuple<?, ?>) o;
+    public V getVal() {
+        return val;
+    }
 
-		if (!(key.equals(other.getKey()))) {
-			return false;
-		}
+    public void setVal(V val) {
+        this.val = val;
+    }
 
-		if (!(val.equals(other.getVal()))) {
-			return false;
-		}
+    public boolean equals(Object o) {
+        if (o == null) {
+            return false;
+        }
 
-		return true;
-	}
+        if (!(o instanceof Tuple<?, ?>)) {
+            return false;
+        }
+        Tuple<?, ?> other = (Tuple<?, ?>) o;
 
-	public int hashCode() {
-		return val.hashCode() + key.hashCode() * 17;
-	}
+        if (!(key.equals(other.getKey()))) {
+            return false;
+        }
 
-	
+        if (!(val.equals(other.getVal()))) {
+            return false;
+        }
+
+        return true;
+    }
+
+    public int hashCode() {
+        return val.hashCode() + key.hashCode() * 17;
+    }
+
+
 }

@@ -1,33 +1,32 @@
 package com.sots.item.modules;
 
-import java.util.UUID;
-
 import com.sots.item.LPItemBase;
 import com.sots.module.IModule;
 import com.sots.module.ModuleExtract;
 import com.sots.util.References;
-
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class ItemModuleExtract extends LPItemBase implements IItemModule{
+import java.util.UUID;
 
-	public ItemModuleExtract() {
-		setRegistryName(References.RN_MODULE_EXTRACTOR);
-		setUnlocalizedName(References.NAME_MODULE_EXTRACTOR);
-		setCreativeTab(CreativeTabs.REDSTONE);
-	}
+public class ItemModuleExtract extends LPItemBase implements IItemModule {
 
-	@SideOnly(Side.CLIENT)
-	public void initModel() {
-		ModelLoader.setCustomModelResourceLocation(this, 0, new ModelResourceLocation(getRegistryName(), "inventory"));
-	}
+    public ItemModuleExtract() {
+        setRegistryName(References.RN_MODULE_EXTRACTOR);
+        setUnlocalizedName(References.NAME_MODULE_EXTRACTOR);
+        setCreativeTab(CreativeTabs.REDSTONE);
+    }
 
-	@Override
-	public IModule getModLogic() {
-		return new ModuleExtract(UUID.randomUUID());
-	}
+    @SideOnly(Side.CLIENT)
+    public void initModel() {
+        ModelLoader.setCustomModelResourceLocation(this, 0, new ModelResourceLocation(getRegistryName(), "inventory"));
+    }
+
+    @Override
+    public IModule getModLogic() {
+        return new ModuleExtract(UUID.randomUUID());
+    }
 }
